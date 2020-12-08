@@ -24,5 +24,36 @@ namespace WpfApp1
         {
             InitializeComponent();
         }
+
+        //Instantiate two Date Time variables
+        public DateTime FirstDate, SecondDate; 
+
+        // Get First Date
+        public void myCalenderOne_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FirstDate = myCalenderOne.SelectedDate.Value;
+            myFirstDate.Content = FirstDate;
+        }
+
+        // Get Second Date
+        private void myCalenderTwo_SelectedDatesChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SecondDate = myCalenderTwo.SelectedDate.Value;
+            mySecondDate.Content = SecondDate;
+        }
+
+        // Get Black Out Dates
+        private void answerButton_Click(object sender, RoutedEventArgs e)
+        {
+            SetBlackOutDates(FirstDate, SecondDate);
+            
+            
+        }
+
+        // Call Black Out Methods
+        private void SetBlackOutDates(DateTime FirstDate, DateTime SecondDate)
+        {
+            myCalenderBlackout.BlackoutDates.Add(new CalendarDateRange(FirstDate, SecondDate));
+        }
     }
 }

@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Calendar x:Name="myCalenderOne" HorizontalAlignment="Left" Height="174" Margin="30,66,0,0" VerticalAlignment="Top" Width="212">
+        <Calendar x:Name="myCalenderOne" HorizontalAlignment="Left" Height="174" Margin="30,66,0,0" VerticalAlignment="Top" Width="212"
+                  SelectionMode="SingleDate"
+                  SelectedDatesChanged="myCalenderOne_SelectedDatesChanged">
             <Calendar.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4EAF0"/>
@@ -18,7 +20,9 @@
             </Calendar.Background>
         </Calendar>
         <Label Content="Number of Days Between" HorizontalAlignment="Left" Height="35" Margin="124,26,0,0" VerticalAlignment="Top" Width="236" FontSize="20"/>
-        <Calendar x:Name="myCalenderTwo" HorizontalAlignment="Left" Height="179" Margin="242,66,0,0" VerticalAlignment="Top" Width="203">
+        <Calendar x:Name="myCalenderTwo" HorizontalAlignment="Left" Height="179" Margin="242,66,0,0" VerticalAlignment="Top" Width="203"
+                  SelectionMode="SingleDate"
+                  SelectedDatesChanged="myCalenderTwo_SelectedDatesChanged">
             <Calendar.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4EAF0"/>
@@ -39,11 +43,10 @@
                 </LinearGradientBrush>
             </Calendar.Background>
         </Calendar>
-        <Button x:Name="answerButton" Content="OK" HorizontalAlignment="Left" Height="50" Margin="45,374,0,0" VerticalAlignment="Top" Width="44" FontSize="22"/>
-        <Label Content="My 1st Date" HorizontalAlignment="Left" Height="38" Margin="82,245,0,0" VerticalAlignment="Top" Width="116" FontSize="18" FontWeight="Bold"/>
-        <Label Content="My 2nd Date" HorizontalAlignment="Left" Height="38" Margin="282,245,0,0" VerticalAlignment="Top" Width="122" FontSize="18" FontWeight="Bold"/>
-        <Label x:Name="answerOne" Content="Answer " HorizontalAlignment="Left" Height="31" Margin="106,283,0,0" VerticalAlignment="Top" Width="68" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="answerTwo" Content="Answer " HorizontalAlignment="Left" Height="31" Margin="309,283,0,0" VerticalAlignment="Top" Width="68" FontSize="16" FontWeight="Bold"/>
+        <Button x:Name="answerButton" Content="OK" HorizontalAlignment="Left" Height="50" Margin="45,374,0,0" VerticalAlignment="Top" Width="44" FontSize="22" Click="answerButton_Click"/>
+        <Label x:Name="myFirstDate" Content="My 1st Date" HorizontalAlignment="Left" Height="38" Margin="82,245,0,0" VerticalAlignment="Top" Width="116" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="mySecondDate" Content="My 2nd Date" HorizontalAlignment="Left" Height="38" Margin="282,245,0,0" VerticalAlignment="Top" Width="122" FontSize="18" FontWeight="Bold"/>
+        <Label x:Name="answerLabel" Content="" HorizontalAlignment="Left" Height="39" Margin="198,315,0,0" VerticalAlignment="Top" Width="78" FontSize="15"/>
 
     </Grid>
 </Window>

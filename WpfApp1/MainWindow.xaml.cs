@@ -46,7 +46,12 @@ namespace WpfApp1
         private void answerButton_Click(object sender, RoutedEventArgs e)
         {
             SetBlackOutDates(FirstDate, SecondDate);
-            
+            DateTime startTime = FirstDate;
+            DateTime endTime = SecondDate;
+
+            TimeSpan duration = endTime - startTime;
+
+            answerLabel.Content = duration;
             
         }
 
